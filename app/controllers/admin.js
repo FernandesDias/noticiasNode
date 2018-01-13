@@ -8,7 +8,7 @@ module.exports.noticias_salvar = function(application, req, res){
     req.assert('titulo','Título é Obrigatório').notEmpty();
     req.assert('resumo','Resumo é Obrigatório').notEmpty();
     req.assert('resumo','Resumo deve conter entre 10 e 100 caracteres').len(10,100);
-    req.assert('titulo','Data é obrigatória').notEmpty().isDate({format: 'YYYY-MM-DD'});
+    req.assert('data_noticia','Data é obrigatória').notEmpty().isDate({format: 'YYYY-MM-DD'});
     req.assert('noticia','Noticia é Obrigatório').notEmpty();
     
     var erros = req.validationErrors();

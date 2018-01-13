@@ -1,9 +1,9 @@
 module.exports.index = function(application,req,res){
-    
+    var moment = require('moment');
     var connection = application.config.dbConnection();
     var noticiasModel = new application.app.models.noticiasDAO(connection);
     
     noticiasModel.get5UltimasNoticias(function(error, result){
-        res.render("home/index", {noticias: result});
+        res.render("home/index", {noticias: result, moment: moment});
     });
 }
